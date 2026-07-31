@@ -13,8 +13,6 @@
 
 This repository demonstrates a fully automated, production-ready backend infrastructure. It features four Spring Boot microservices communicating asynchronously via Kafka using the **Saga** and **Outbox** patterns. The focus is on robust **DevOps practices**, **Infrastructure as Code**, and **Observability**.
 
-![Hero Architecture](assets/architecture.png)
-
 ---
 
 ## 📑 Table of Contents
@@ -95,8 +93,6 @@ The infrastructure is provisioned entirely via **Terraform** (`Infrastructure/ma
 
 </details>
 
-![AWS Console](assets/aws-console.png)
-
 ---
 
 ## 🚀 CI/CD Pipeline
@@ -122,8 +118,6 @@ flowchart TD
 - **Zero-Downtime-ish:** The `docker compose up -d` pulls the new image and recreates containers. Healthchecks ensure services are actually up before marking the deployment as successful.
 
 </details>
-
-![GitHub Actions](assets/github-actions.png)
 
 ---
 
@@ -154,8 +148,6 @@ graph LR
 - **Prometheus:** Scrapes JVM metrics, container stats (`cAdvisor`), and host metrics (`Node Exporter`).
 - **Grafana:** Visualizes metrics with pre-provisioned dashboards via volume mounts.
 - **Loki & Promtail:** Promtail tails Docker container logs and ships them to Loki for centralized search directly inside Grafana.
-
-![Grafana Dashboard](assets/grafana-dashboard.png)
 
 ---
 
@@ -193,13 +185,9 @@ sequenceDiagram
 
 </details>
 
-![Kafka UI](assets/kafka-ui.png)
-
 ---
 
 ## 🔄 Deployment Lifecycle
-
-![Deployment Flow](assets/deployment.gif)
 
 ```text
 1. terraform apply -> Provisions VPC, Security Groups, IAM, EC2
